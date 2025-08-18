@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "netlify-build": "npm run build",
+    "netlify-dev": "netlify dev"
   },
   "dependencies": {
     "lucide-react": "^0.344.0",
