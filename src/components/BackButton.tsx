@@ -3,13 +3,8 @@ import { ArrowLeft } from 'lucide-react';
 
 const BackButton: React.FC = () => {
   const handleBack = () => {
-    // Check if there's history to go back to
-    if (window.history.length > 1) {
-      window.history.back();
-    } else {
-      // If no history, go to official website
-      window.location.href = 'https://minucst.org/';
-    }
+    // Always redirect to the official MINUCST website
+    window.location.href = 'https://minucstxv.com/';
   };
 
   return (
