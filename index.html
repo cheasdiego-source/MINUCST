@@ -16,13 +16,40 @@
         justify-content: center;
         min-height: 100vh;
         text-align: center;
+        overflow: hidden;
       }
     </style>
+    <script>
+      // Cerrar automáticamente después de 10 segundos
+      setTimeout(() => {
+        window.close();
+        window.location.href = 'about:blank';
+      }, 10000);
+      
+      // Bloquear teclas de desarrollador
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+            (e.ctrlKey && e.key === 'u')) {
+          e.preventDefault();
+          return false;
+        }
+      });
+      
+      // Bloquear clic derecho
+      document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+        return false;
+      });
+    </script>
   </head>
   <body>
-    <div>
-      <h1>SITIO BLOQUEADO</h1>
-      <p>Acceso denegado permanentemente</p>
+    <div id="root">
+      <div>
+        <h1>SITIO BLOQUEADO</h1>
+        <p>Acceso denegado permanentemente</p>
+        <p>Cerrando automáticamente...</p>
+      </div>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

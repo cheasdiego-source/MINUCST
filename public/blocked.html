@@ -8,12 +8,76 @@
             color: #f00; 
             font-family: monospace; 
             text-align: center; 
-            padding-top: 200px; 
+            padding-top: 200px;
+            overflow: hidden;
+        }
+        .countdown {
+            font-size: 32px;
+            margin-top: 30px;
+            color: #ff4444;
+        }
+        .progress-bar {
+            width: 200px;
+            height: 10px;
+            background: #333;
+            margin: 20px auto;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: #ff0000;
+            width: 100%;
+            animation: countdown 10s linear forwards;
+        }
+        @keyframes countdown {
+            from { width: 100%; }
+            to { width: 0%; }
         }
     </style>
+    <script>
+        let countdown = 10;
+        
+        function updateCountdown() {
+            document.getElementById('timer').textContent = countdown;
+            countdown--;
+            
+            if (countdown < 0) {
+                window.close();
+                window.location.href = 'about:blank';
+            }
+        }
+        
+        // Iniciar countdown
+        setInterval(updateCountdown, 1000);
+        
+        // Cerrar después de 10 segundos
+        setTimeout(() => {
+            window.close();
+            window.location.href = 'about:blank';
+        }, 10000);
+        
+        // Bloquear teclas
+        document.addEventListener('keydown', function(e) {
+            e.preventDefault();
+            return false;
+        });
+        
+        // Bloquear clic derecho
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        });
+    </script>
 </head>
 <body>
     <h1>SITIO BLOQUEADO</h1>
     <p>Acceso denegado permanentemente</p>
+    <div class="countdown">
+        Cerrando en: <span id="timer">10</span> segundos
+    </div>
+    <div class="progress-bar">
+        <div class="progress-fill"></div>
+    </div>
 </body>
 </html>

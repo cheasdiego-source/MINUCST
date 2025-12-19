@@ -1,30 +1,25 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
+import App from './App';
 import './index.css';
 
-// Sitio completamente bloqueado
-const BlockedApp = () => {
-  return (
-    <div style={{
-      minHeight: '100vh',
-      backgroundColor: '#000',
-      color: '#f00',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontFamily: 'monospace'
-    }}>
-      <h1>SITIO DESACTIVADO</h1>
-    </div>
-  );
-};
+// Bloquear clic derecho y teclas
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+document.addEventListener('keydown', (e) => {
+  // Bloquear F12, Ctrl+Shift+I, Ctrl+U, etc.
+  if (e.key === 'F12' || 
+      (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+      (e.ctrlKey && e.key === 'u')) {
+    e.preventDefault();
+  }
+});
 
 const rootElement = document.getElementById('root');
 if (rootElement) {
   const root = createRoot(rootElement);
   root.render(
     <StrictMode>
-      <BlockedApp />
+      <App />
     </StrictMode>
   );
 }
