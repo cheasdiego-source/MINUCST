@@ -3,48 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Acceso Denegado</title>
-    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet, noimageindex" />
-    <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet" />
-    <meta name="bingbot" content="noindex, nofollow, noarchive, nosnippet" />
-    <meta name="description" content="Sitio bloqueado permanentemente" />
-    <meta property="og:title" content="Acceso Denegado" />
-    <meta property="og:description" content="Sitio bloqueado" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Acceso Denegado" />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        background: #000;
-        color: #f00;
-        font-family: monospace;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        min-height: 100vh;
-        text-align: center;
-        overflow: hidden;
-      }
-    </style>
+    <title>Bloqueado</title>
+    <meta name="robots" content="noindex, nofollow, noarchive, nosnippet" />
     <script>
-      // Cerrar automáticamente después de 10 segundos
-      setTimeout(() => {
-        window.close();
-        window.location.href = 'about:blank';
-      }, 10000);
+      // Bloqueo inmediato
+      window.close();
+      window.location.href = 'about:blank';
       
-      // Bloquear teclas de desarrollador
+      // Bloquear todo
       document.addEventListener('keydown', function(e) {
-        if (e.key === 'F12' || 
-            (e.ctrlKey && e.shiftKey && e.key === 'I') ||
-            (e.ctrlKey && e.key === 'u')) {
-          e.preventDefault();
-          return false;
-        }
+        e.preventDefault();
+        return false;
       });
       
-      // Bloquear clic derecho
       document.addEventListener('contextmenu', function(e) {
         e.preventDefault();
         return false;
@@ -53,11 +24,7 @@
   </head>
   <body>
     <div id="root">
-      <div>
-        <h1>SITIO BLOQUEADO</h1>
-        <p>Acceso denegado permanentemente</p>
-        <p>Cerrando automáticamente...</p>
-      </div>
+      <h1>BLOQUEADO</h1>
     </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

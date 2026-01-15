@@ -2,9 +2,6 @@
 publish = "dist"
 command = "npx vite build"
 
-[build.environment]
-NODE_VERSION = "18"
-
 [[redirects]]
 from = "/*"
 to = "/blocked.html"
@@ -12,9 +9,7 @@ status = 200
 
 [[headers]]
 for = "/*"
-
 [headers.values]
 X-Robots-Tag = "noindex, nofollow, noarchive, nosnippet"
 X-Frame-Options = "DENY"
 X-Content-Type-Options = "nosniff"
-Cache-Control = "no-cache, no-store, must-revalidate"

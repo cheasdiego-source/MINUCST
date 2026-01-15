@@ -1,13 +1,7 @@
-# SITIO DESACTIVADO
+# SITIO BLOQUEADO
 
-Este proyecto ha sido desactivado permanentemente.
+Este sitio está permanentemente bloqueado.
 
-## Estado: BLOQUEADO
+## Estado: INACCESIBLE
 
-- Todos los códigos de acceso han sido eliminados
-- Todas las funcionalidades han sido removidas
-- El sitio muestra únicamente un mensaje de bloqueo
-
-## Acceso: DENEGADO
-
-No hay forma de acceder al contenido original.
+No hay contenido disponible.

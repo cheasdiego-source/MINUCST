@@ -7,8 +7,9 @@
 body {
   background: #000000 !important;
   color: #ff0000 !important;
-  font-family: 'Courier New', monospace !important;
+  font-family: monospace !important;
   overflow: hidden;
+  user-select: none !important;
 }
 
 html {
@@ -21,22 +22,4 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Bloquear cualquier intento de acceso */
-* {
-  user-select: none !important;
-  -webkit-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-}
-
-/* Deshabilitar clic derecho */
-body {
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
